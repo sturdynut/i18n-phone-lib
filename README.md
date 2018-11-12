@@ -21,7 +21,7 @@ A compilation of libraries used for formatting i18n phone numbers.
 
   * Step 4
 
-    * Update `index.jx` with the compiled libraries from the compiler service.
+    * Update `index.js` with the compiled libraries from the compiler service.
     * Commit your change, push it up and submit a pull request.
     * Thank you!
 
