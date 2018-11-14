@@ -3,11 +3,19 @@
   "description": "A compilation of libraries used for formatting i18n phone numbers.",
   "version": "0.0.2",
   "author": "Matti Salokangas <matti.salokangas@gmail.com>",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rm -rf ./dist && gulp"
+  },
   "keywords": [
     "phone",
     "formatter",
     "i18n"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-umd": "^2.0.0"
+  }
 }
