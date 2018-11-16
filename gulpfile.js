@@ -1,8 +1,9 @@
 const gulp = require('gulp');
 const umd = require('gulp-umd');
+const uglify = require('gulp-uglify');
 
 gulp.task('default', function() {
-  return gulp.src('index.js')
+  return gulp.src('./index.js')
     .pipe(umd({
       templateName: 'amdCommonWeb',
       exports: function(file) {
@@ -12,5 +13,6 @@ gulp.task('default', function() {
         }
       }
     }))
+    .pipe(uglify())
     .pipe(gulp.dest('dist'));
 });
