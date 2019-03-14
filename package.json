@@ -5,7 +5,7 @@
   "author": "Matti Salokangas <matti.salokangas@gmail.com>",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rm -rf ./dist && gulp"
+    "build": "rm -rf ./dist && gulp && rollup -c"
   },
   "keywords": [
     "phone",
@@ -15,8 +15,8 @@
   "license": "MIT",
   "devDependencies": {
     "gulp": "^4.0.0",
-    "gulp-cli": "^2.0.1",
-    "gulp-uglify": "^3.0.1",
-    "gulp-umd": "^2.0.0"
+    "gulp-umd": "^2.0.0",
+    "rollup": "^1.6.0",
+    "rollup-plugin-terser": "^4.0.4"
   }
 }

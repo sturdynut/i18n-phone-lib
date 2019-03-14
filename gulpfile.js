@@ -1,6 +1,5 @@
 const gulp = require('gulp');
 const umd = require('gulp-umd');
-const uglify = require('gulp-uglify');
 
 gulp.task('default', function() {
   return gulp.src('./index.js')
@@ -13,6 +12,5 @@ gulp.task('default', function() {
         }
       }
     }))
-    .pipe(uglify())
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('tmp'));
 });
