@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const umd = require('gulp-umd');
+const expose = require('gulp-expose');
 
 gulp.task('default', function() {
   return gulp.src('./index.js')
@@ -12,5 +13,6 @@ gulp.task('default', function() {
         }
       }
     }))
+    .pipe(expose('window', 'i18nPhoneLib'))
     .pipe(gulp.dest('tmp'));
 });
