@@ -1,18 +1,20 @@
 const gulp = require('gulp');
-const umd = require('gulp-umd');
-const expose = require('gulp-expose');
+let uglify = require('gulp-uglify-es').default;
+var wrap = require("gulp-wrap");
+var pipeline = require('readable-stream').pipeline;
 
 gulp.task('default', function() {
-  return gulp.src('./index.js')
-    .pipe(umd({
-      templateName: 'amdCommonWeb',
-      exports: function(file) {
-        return {
-          'goog': 'goog',
-          'i18n': 'i18n'
-        }
-      }
-    }))
-    .pipe(expose('window', 'i18nPhoneLib'))
-    .pipe(gulp.dest('tmp'));
+  return pipeline(
+    gulp.src('./index.js'),
+    wrap(`
+        <%= contents %>
+        ;
+        module.exports = {
+          goog,
+          i18n
+        };
+    `),
+    uglify(),
+    gulp.dest('dist')
+);
 });

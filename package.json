@@ -1,11 +1,11 @@
 {
   "name": "@sturdynut/i18n-phone-lib",
   "description": "A compilation of libraries used for formatting i18n phone numbers.",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "Matti Salokangas <matti.salokangas@gmail.com>",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rm -rf ./dist && gulp && rollup -c"
+    "build": "rm -rf ./dist && gulp"
   },
   "keywords": [
     "phone",
@@ -15,9 +15,8 @@
   "license": "MIT",
   "devDependencies": {
     "gulp": "^4.0.0",
-    "gulp-expose": "^0.0.7",
-    "gulp-umd": "^2.0.0",
-    "rollup": "^1.6.0",
-    "rollup-plugin-terser": "^4.0.4"
+    "gulp-uglify-es": "^1.0.4",
+    "gulp-wrap": "^0.15.0",
+    "readable-stream": "^3.4.0"
   }
 }
